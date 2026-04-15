@@ -1,3 +1,4 @@
+import funcoes
 print("\nBem vindo ao ") 
 
 leitura=int(input("Digite o número total de leituras da pressão hidrodinâmina que serão realizadas no seu turno: "))
@@ -5,15 +6,22 @@ leitura=int(input("Digite o número total de leituras da pressão hidrodinâmina
 zVerde=0
 zAmarela=0
 zVermelha=0
+menor = 400
+leituraRealizada = 0
+
+somaPressoes=0
 
 for i in range(leitura):
     
-    upcAtual=float(input("Digite o valor atual da Pressão Hidrodinâmica: "))
     if zVermelha!= 2:
-        if upcAtual>150:
-            upcNovo=upcAtual*1.08
-        else:
-            upcNovo=upcAtual*0.96
+        upcAtual=float(input("Digite o valor atual da Pressão Hidrodinâmica: "))
+
+        upcNovo=funcoes.acharNovo(upcAtual)
+        
+        if menor>upcNovo:
+            menor = upcNovo
+
+        somaPressoes+=upcNovo
 
         if upcNovo>120 and upcNovo<180:
             zVerde+=1
@@ -23,4 +31,11 @@ for i in range(leitura):
             zVermelha = 0
         else:
             zVermelha+=1
-    
+
+    else:
+        print("\nO escoamento irá ser interrompido imediatamente por segurança")
+        break
+    leituraRealizada +=1
+
+print("Resultados: ")
+  
