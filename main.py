@@ -18,8 +18,7 @@ for i in range(leitura):
 
         upcNovo=funcoes.acharNovo(upcAtual)
         
-        if menor>upcNovo:
-            menor = upcNovo
+        menor = funcoes.menor(menor, upcNovo)
 
         somaPressoes+=upcNovo
 
@@ -37,5 +36,5 @@ for i in range(leitura):
         break
     leituraRealizada +=1
 
-print("Resultados: ")
+funcoes.resultados(menor, zAmarela, zVerde)
   
