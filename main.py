@@ -22,14 +22,7 @@ for i in range(leitura):
 
         somaPressoes+=upcNovo
 
-        if upcNovo>120 and upcNovo<180:
-            zVerde+=1
-            zVermelha = 0
-        elif upcNovo<250:
-            zAmarela+=1
-            zVermelha = 0
-        else:
-            zVermelha+=1
+        classificacao = funcoes.classificacao(upcNovo,zAmarela,zVerde,zVermelha)
 
     else:
         print("\nO escoamento irá ser interrompido imediatamente por segurança")

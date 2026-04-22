@@ -21,3 +21,18 @@ def resultados(menor, zAmarela, zVerde):
     print(f'O menor UPC registrado foi {menor:.2f}')
     print(f'O total de Zonas Verdes registradas foi de {zVerde}')
     print(f'O total de Zonas Amarelas registradas foi de {zAmarela}')
+
+
+def classificacao(upcNovo,zAmarela,zVerde,zVermelha):
+    if upcNovo>120 and upcNovo<180:
+            zVerde+=1
+            zVermelha = 0
+            return zVerde, zVermelha
+            
+        elif upcNovo<250:
+            zAmarela+=1
+            zVermelha = 0
+            return zAmarela, zVermelha
+        else:
+            zVermelha+=1
+            return zVermelha
