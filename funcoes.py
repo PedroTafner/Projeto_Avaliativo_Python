@@ -24,15 +24,15 @@ def resultados(menor, zAmarela, zVerde):
 
 
 def classificacao(upcNovo,zAmarela,zVerde,zVermelha):
-    if upcNovo>120 and upcNovo<180:
-            zVerde+=1
-            zVermelha = 0
-            return zVerde, zVermelha
+    if upcNovo<120:
+        print("O fluido foi cristalizado e entupiu")
+    elif upcNovo>120 and upcNovo<180:
+        zVerde+=1
+        zVermelha = 0
             
-        elif upcNovo<250:
-            zAmarela+=1
-            zVermelha = 0
-            return zAmarela, zVermelha
-        else:
-            zVermelha+=1
-            return zVermelha
+    elif upcNovo>180 and upcNovo<250:
+        zAmarela+=1
+        zVermelha = 0
+    else:
+        zVermelha+=1
+    return zAmarela,zVerde,zVermelha

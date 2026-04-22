@@ -13,7 +13,8 @@ somaPressoes=0
 
 for i in range(leitura):
     
-    if zVermelha!= 2:
+    if zVermelha!= 2 and upcNovo>120:
+
         upcAtual=float(input("Digite o valor atual da Pressão Hidrodinâmica: "))
 
         upcNovo=funcoes.acharNovo(upcAtual)
@@ -21,8 +22,8 @@ for i in range(leitura):
         menor = funcoes.menor(menor, upcNovo)
 
         somaPressoes+=upcNovo
-
-        classificacao = funcoes.classificacao(upcNovo,zAmarela,zVerde,zVermelha)
+    
+        zAmarela, zVerde, zVermelha = funcoes.classificacao(upcNovo,zAmarela,zVerde,zVermelha)
 
     else:
         print("\nO escoamento irá ser interrompido imediatamente por segurança")
