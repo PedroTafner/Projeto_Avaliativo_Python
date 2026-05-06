@@ -33,7 +33,7 @@ for i in range(leitura):
             leituraRealizada += 1
             break
         
-    else:
+    if zvermelha --2:
         print("\n-------------------------------------------------------------------------------------------------------")
         print("\nERRO DETECTADO:\n\tDevido à alta pressão constrita, o escoamento será interrompido imediatamente por segurança.")
         break
