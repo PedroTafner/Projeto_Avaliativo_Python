@@ -1,8 +1,8 @@
 import funcoes as f
-print("\nBem vindo ao programa da Refinaria Delta-9")
-reiniciarSistema = True
+reiniciarSistema = 1
 
-while reiniciarSistema == True:
+while reiniciarSistema == 1:
+    print("\nBem vindo ao programa da Refinaria Delta-9")
     leitura = int(input("Digite o número total de leituras da pressão hidrodinâmina que serão realizadas no seu turno: "))
 
     zVerde = 0
@@ -54,4 +54,4 @@ while reiniciarSistema == True:
 
     reiniciarSistema = f.reiniciar()
 
-input("\nAperte ENTER para finalizar...")
+input("Aperte ENTER para finalizar...")
