@@ -15,12 +15,12 @@ def menor(menor,upcNovo):
     return menor
 
 
-def resultados(mediaPressoes, menor, zVerde,porcentagemDeLeitura ):
+def resultados(mediaPressoes, menor, porcentagemVerde,porcentagemDeLeitura):
     print("\n-------------------------------------------------------------------------------------------------------")
-    print('\n\tRESULTADO DAS LEITURAS DA REFINARIA:')
+    print('\n\tRESULTADO DAS LEITURAS DA REFINARIA:')   
     print(f'\n\tA media das pressões foi de {mediaPressoes:.2f}')
     print(f'\tO menor UPC registrado foi {menor:.2f}')
-    print(f'\tO total de Zonas Verdes registradas foi de {zVerde}')
+    print(f'\tA porcentagem de leituras que ficaram na Zona Verde foi {porcentagemVerde:.2f}%')
 
     if porcentagemDeLeitura != 100:
         print(f'\tA porcentagem de leituras realizadas é de {porcentagemDeLeitura:.2f}%')
@@ -29,7 +29,7 @@ def resultados(mediaPressoes, menor, zVerde,porcentagemDeLeitura ):
 
 
 def classificacao(upcNovo,zAmarela,zVerde,zVermelha):    
-    if upcNovo > 120 and upcNovo < 180:
+    if upcNovo >= 120 and upcNovo <= 180:
         zVerde += 1
         zVermelha = 0   
     
@@ -50,3 +50,12 @@ def media(somaPressoes, leituraRealizada):
 def porcentagem(leituraRealizada, leitura):
    resultado = (leituraRealizada/leitura) * 100
    return resultado
+
+def reiniciar():
+    resp = str(input("\nVocê deseja reiniciar o sistema? (s/n): "))
+    if resp == "s":
+        print("\n-------------------------------------------------------------------------------------------------------\n\nReiniciando...")
+        print("\n-------------------------------------------------------------------------------------------------------")
+        return True
+    if resp == "n":
+        return False
